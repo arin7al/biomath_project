@@ -1,0 +1,122 @@
+\documentclass[oneside, final, 12pt]{article}
+
+\pagestyle{plain}
+
+\usepackage{a4wide}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{vmargin}
+\setpapersize{A4}
+\setmarginsrb{2cm}{1.5cm}{1cm}{1.5cm}{5pt}{5mm}{5pt}{13mm}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+
+\newtheorem{definition}{Определение}
+\newtheorem{feature}{Свойство}
+\newtheorem{statement}{Утверждение}
+\newtheorem{sthm}{Теорема}
+
+
+\begin{document}
+
+
+\thispagestyle{empty}
+
+\begin{center}
+\ \vspace{-3cm}
+
+\includegraphics[width=0.5\textwidth]{msu.eps}\\
+{\scshape Московский государственный университет имени М.~В.~Ломоносова}\\
+Факультет вычислительной математики и кибернетики\\
+Кафедра системного анализа
+
+\vfill
+
+\begin{LARGE}
+	Отчёт по практикуму
+
+\end{LARGE}
+
+\vspace{1cm}
+
+\begin{Huge}
+\bfseries <<Прикладные задачи системного анализа: задачи биоматематики>>
+
+\end{Huge}
+
+\end{center}
+
+\vspace{1cm}
+
+\begin{flushright}
+  \large
+  \textit{Студентка 515 группы}\\
+  А.\,А.~Наумова
+
+  \vspace{5mm}
+
+  \textit{Руководитель практикума}\\
+   аспирант Д.\,А.~Алимов
+
+\end{flushright}
+
+\vfill
+
+\begin{center}
+Москва, 2020
+\end{center}
+
+\newpage
+\tableofcontents								%	СОДЕРЖАНИЕ
+
+\newpage
+\section{Постановка задачи}						%	ПОСТАНОВКА ЗАДАЧИ
+	\[
+	\begin{cases}
+	\dot{u} = au - \dfrac{bu^2v}{1 + Pu} + d_1u_{xx}, \\
+	\dot{v} = -cv + \dfrac{du^2v}{1 + Pu} + d_2v_{xx}.
+	\end{cases}
+	\]
+
+\newpage
+\section{Исследование фазового портрета нераспределенной системы}						%
+
+Сделаем замену переменных.
+Пусть
+\[
+    \widetilde{u} = \alpha u;\\
+    \widetilde{v} = \beta u;\\
+    \widetilde{t} = \gamma t;\\
+    \widetilde{x} = \delta x.
+\]
+Тогда система примет следующий вид:
+\[
+    \begin{cases}
+        \dfrac{\gamma}{\alpha} \widetilde{u}_{\widetilde{t}} =
+        \dfrac{a}{\alpha}\widetilde{u}
+        - \dfrac{b}{\alpha^2\beta} \dfrac{\widetilde{u}^2\widetilde{v}}{(1 + P\widetilde{u}/\alpha)}
+        + d_1\dfrac{\delta^2}{\alpha} \widetilde{u}_{\widetilde{x}\widetilde{x}}, \\
+
+        \dfrac{\gamma}{\beta} \widetilde{v}_{\widetilde{t}} =
+        \dfrac{-c}{\beta}\widetilde{v}
+        + \dfrac{d}{\alpha^2\beta} \dfrac{\widetilde{u}^2\widetilde{v}}{(1 + P\widetilde{u}/\alpha)}
+        + d_2\dfrac{\delta^2}{\beta} \widetilde{v}_{\widetilde{x}\widetilde{x}}.
+    \end{cases}
+\]
+
+\newpage
+\clearpage
+\begin{thebibliography}{0}
+\addcontentsline{toc}{section}{Список литературы}
+	\bibitem{OC_lect}Братусь~А.\,С., Новожилов~А.\,С., Платонов~А.\,П. \label{Bratus_book}
+	\emph{Динамические системы и модели биологии},
+	2011 г.
+\end{thebibliography}
+\end{document}
