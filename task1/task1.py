@@ -6,7 +6,7 @@ import math
 
 def ode(y, t, k1, k2, k3):
     u, v = y
-    dydt = [u * (1 - k1 * v * u / (1 + u)), k2 * v * (1 - k3 * u ** 2 / (1 + u))]
+    dydt = [u * (1 - k1 * v * u / (1 + u)), k2 * v * (1 - k3 * (u ** 2) / (1 + u))]
     return dydt
 
 
@@ -22,19 +22,21 @@ def draw_phase_portrait(args, num_u=1, num_v=1, start_u=0., stop_u=5., start_v=0
     v0_vec = np.linspace(start_v, stop_v, num_v)
     for u0 in u0_vec:
         for v0 in v0_vec:
+            plt.scatter(u0, v0)
             sol = calc_ode(args, u0, v0, stop_t, num_t)
             u = sol[:, 0]
             v = sol[:, 1]
-            plt.plot(u, v, 'b')
+            trajectories, = plt.plot(u, v, 'b', label='system trajectories')
     # plt.xlabel('u')
     # plt.ylabel('v')
     # plt.grid()
     # plt.show()
+    return trajectories
 
 
-k1 = 0.25
-k2 = 5.0
-k3 = 2.0
+k1 = 1
+k2 = -1
+k3 = 1
 
 
 def l1(u):
@@ -45,34 +47,38 @@ def l1(u):
 def draw_nullclines(n, start_u=0., stop_u=5., start_v=0., stop_v=5.):
     u = np.linspace(start_u, stop_u, n)
     v = l1(u)
-    plt.plot(u, v, 'g')
+    plt.plot(u, v, 'g', linewidth=3)
 
     v2 = np.linspace(start_v, stop_v, n)
     u_star = (1 + math.sqrt(1 + 4 * k3)) / (2 * k3)
     u2 = np.repeat(u_star, n)
-    plt.plot(u2, v2, 'g')
+    isoclines, = plt.plot(u2, v2, 'g', linewidth=3, label='isoclines')
+    # plt.plot([1.618], [l1(1.618)], 'r', marker="*", markersize=12)
+    return isoclines
 
 
-start_u = 0.1
+start_u = 0.0
 stop_u = 5.0
 start_v = 0.1
-stop_v = 20.0
-stop_t = 10
+stop_v = 10.0
+stop_t = 100
 num_u = 10
 num_v = 10
-num_t = 100
+num_t = 10000
 
 args = (k1, k2, k3)
 start = 0.1
 end = 20
-draw_nullclines(50, start_u, stop_u, start_v, stop_v)
 
-# drawPhasePortrait(args)
-draw_phase_portrait(args, num_u, num_v, start_u, stop_u, start_v, stop_v, stop_t, num_t)
+isoclines = draw_nullclines(50, start_u, stop_u, start_v, stop_v)
+trajectories = draw_phase_portrait(args, num_u, num_v, start_u, stop_u, start_v, stop_v, stop_t, num_t)
+plt.plot([0], [0], 'r', marker="*", markersize=12)
+fixed_points, = plt.plot([1.618], [l1(1.618)], 'r', marker="*", markersize=12)
 
 plt.xlabel('u')
 plt.ylabel('v')
-plt.xlim([0, stop_u])
-plt.ylim([0, stop_v])
+plt.legend([isoclines, trajectories, fixed_points], ['isoclines', 'system trajectories', 'fixed points'])
+# plt.xlim([0, stop_u])
+# plt.ylim([0, stop_v])
 plt.grid()
 plt.show()
