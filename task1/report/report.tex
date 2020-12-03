@@ -78,12 +78,22 @@
 
 \newpage
 \section{Постановка задачи}						%	ПОСТАНОВКА ЗАДАЧИ
+Дана система, описывающая динамику численности популяций жертвы и хищника:
 	\[
 	\begin{cases}
 	\dot{u} = au - \dfrac{bu^2v}{1 + Pu} + d_1u_{xx}, \\
 	\dot{v} = -cv + \dfrac{du^2v}{1 + Pu} + d_2v_{xx}.
 	\end{cases}
 	\]
+
+Требуется:
+\begin{enumerate}
+    \item Сделать замены переменных
+    \item Исследовать фазовый портрет нераспределенной системы (неподвижные точки, их тип, изоклины)
+    \item Проверить наличие волновых решений распределенной системы
+    \item Выбрать подходящее решение и скорость волны
+    \item Привести иллюстрации и графики фазовых портретов и решений
+\end{enumerate}
 
 \newpage
 \section{Исследование нераспределенной системы}						%
@@ -236,8 +246,8 @@ J(u*,v*) =
 
 \newpage
 \section{Исследование распределенной системы}
-\subsection{Проверка наличия волновых решений}
-Волновые решения ищем в форме:  \(u(t,x)=u(x+ct), v(t,x)=v(x+ct) \). Подставим это в уравнение системы. Получим:\\
+\subsection{Замена переменных}
+Волновые решения ищем в форме:  \(u(t,x)=u(x+ct), v(t,x)=v(x+ct) \), где \(c>0\). Подставим это в уравнение системы. Получим:\\
 \[
     \begin{cases}
         c u^\prime(z) = u(z)\left(1 -  k_1\dfrac{u(z)v(z)}{1 + u(z)}\right) , \\
@@ -254,7 +264,8 @@ J(u*,v*) =
     \end{cases}
 \]
 
-У этой системы 2 неподвижных точки:
+\subsection{Неподвижные точки и их тип}
+У этой системы 2 неподвижных точки, попадающих в рассматриваемую область значений:
 \(\overline{O} = (0, 0, 0)\) и \(\overline{P} = (u^*,v^*,0)\), где \(u^* = \dfrac{1 + \sqrt{5}}{2}, v^* = \dfrac{1}{k_1} \left( 1 + \dfrac{2}{1 + \sqrt{5}} \right) \).\\
 
 Якобиан системы имеет вид:\\
@@ -274,14 +285,59 @@ J(0,0,0) =
     \(0 & \(-k_2 \) & \(c\)\)
 \end{pmatrix}\\
 
+Характеристический многочлен:\\
+
+\(k_{2} \left(- \lambda + \frac{1}{c}\right) - \lambda \left(c - \lambda\right) \left(- \lambda + \frac{1}{c}\right) = 0
+\)
+
+Имеет корни:\\
+
+\(
+\lambda_1 = \frac{1}{c};
+\)\\
+
+\(
+\lambda_2 = \frac{c}{2} - \frac{\sqrt{c^{2} - 4 k_{2}}}{2};
+\)\\
+
+\(
+\lambda_3 = \frac{c}{2} + \frac{\sqrt{c^{2} - 4 k_{2}}}{2};
+\)\\
+
+Так как \(k_{2} < 0, c>0\), получим \(\lambda_1>0, \lambda_2<0, \lambda_3>0\). Точка неустойчива.
+
 J(u^*,v^*,0) =
 \begin{pmatrix}
-    \(\dfrac{1}{c} (1-k_1 uv\dfrac{2+u}{(1+u)^2})\) & \(\dfrac{-k_1}{c} \dfrac{u^2}{1+u}\) & 0\\
+    \( \frac{- \frac{\frac{\sqrt{5}}{2} + \frac{5}{2}}{\frac{\sqrt{5}}{2} + \frac{3}{2}} + 1}{c}\) & \(- \frac{k_{1} \left(\frac{1}{2} + \frac{\sqrt{5}}{2}\right)^{2}}{c \left(\frac{\sqrt{5}}{2} + \frac{3}{2}\right)}\) & 0\\
     0 & 0 & 1 \\
-    \(k_2 k_3 uv\dfrac{2 + u}{\left( 1+u \right)^2} \) & \(-k_2 \left( 1 - k_3\dfrac{u^2}{1+u} \right)\) & \(c\)\)
+    \(\frac{k_{2} \left(1 + \sqrt{5} + \left(\frac{1}{2} + \frac{\sqrt{5}}{2}\right)^{2}\right)}{k_{1} \left(\frac{1}{2} + \frac{\sqrt{5}}{2}\right) \left(\frac{\sqrt{5}}{2} + \frac{3}{2}\right)}\) & \(- k_{2} \left(- \frac{\left(\frac{1}{2} + \frac{\sqrt{5}}{2}\right)^{2}}{\frac{\sqrt{5}}{2} + \frac{3}{2}} + 1\right)\) & \(c\)\)
 \end{pmatrix}\\
 
+Характеристический многочлен:\\
 
+\(k_{2} \left(- \lambda + \frac{- \frac{\frac{\sqrt{5}}{2} + \frac{5}{2}}{\frac{\sqrt{5}}{2} + \frac{3}{2}} + 1}{c}\right) \left(- \frac{\left(\frac{1}{2} + \frac{\sqrt{5}}{2}\right)^{2}}{\frac{\sqrt{5}}{2} + \frac{3}{2}} + 1\right) - \lambda \left(c - \lambda\right) \left(- \lambda + \frac{- \frac{\frac{\sqrt{5}}{2} + \frac{5}{2}}{\frac{\sqrt{5}}{2} + \frac{3}{2}} + 1}{c}\right) - \frac{k_{2} \left(\frac{1}{2} + \frac{\sqrt{5}}{2}\right) \left(c - \lambda\right) \left(1 + \sqrt{5} + \left(\frac{1}{2} + \frac{\sqrt{5}}{2}\right)^{2}\right)}{c \left(\frac{\sqrt{5}}{2} + \frac{3}{2}\right)^{2}} = 0
+\)
+
+Имеет корни:\\
+
+\(
+\lambda_1 = c;
+\)\\
+
+\(
+\lambda_2 = \frac{\sqrt{2} \sqrt{37396 \sqrt{5} c k_{2} + 83620 c k_{2} + 987 \sqrt{5} + 2207} - 47 - 21 \sqrt{5}}{110 \sqrt{5} c + 246 c} =\\
+=\frac{1}{c}(1.17557050458495*\sqrt{c*k2 + 0.026393202250021} - 0.190983005625053);
+\)\\
+
+\(
+\lambda_3 = - \frac{\sqrt{2} \sqrt{37396 \sqrt{5} c k_{2} + 83620 c k_{2} + 987 \sqrt{5} + 2207} + 21 \sqrt{5} + 47}{110 \sqrt{5} c + 246 c} =\\
+= \frac{1}{c}(-1.17557050458495*\sqrt{c*k2 + 0.026393202250021} - 0.190983005625053);
+\)\\
+
+\( \lambda_1>0, Re(\lambda_3)<0, Re(\lambda_2)\) может быть как >0 так и <0 в зависимости от \(c\) и \(k_2\). Точка неустойчива.\\
+
+\subsection{Проверка наличия волновых решений}
+Так как обе точки неустойчивы, волновых решений нет.
 
 \newpage
 \clearpage
