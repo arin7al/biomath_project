@@ -36,12 +36,13 @@ print eigs[0].evalf()
 sp.print_latex(eigs[1])
 print eigs[1].evalf()
 
-print sp.print_latex(
-    (1 - k1 * u * v * (2+u) / ((1 + u) ** 2) - lam) * (k2 * (1 - k3 * u ** 2 / (1 + u)) - lam) - (-k1 * u ** 2 / (1 + u)) * (
-              -k2 * k3 * v * (2 * u + u ** 2) / (1 + u) ** 2))
+# print sp.print_latex(
+#     (1 - k1 * u * v * (2+u) / ((1 + u) ** 2) - lam) * (k2 * (1 - k3 * u ** 2 / (1 + u)) - lam) - (-k1 * u ** 2 / (1 + u)) * (
+#               -k2 * k3 * v * (2 * u + u ** 2) / (1 + u) ** 2))
 
-# print sp.print_latex((-1 - k2 + k1*v/(u**2 +2*u + 1) + k2*k3*u*u/(u+1)))
+print sp.print_latex((1 - k1 * u * v * (2+u) / ((1 + u) ** 2)))
+print sp.print_latex((-k1 * u ** 2 / (1 + u)))
+print sp.print_latex(-k2 * k3 * v * (2 * u + u ** 2) / (1 + u) ** 2)
+print sp.print_latex((k2 * (1 - k3 * u ** 2 / (1 + u))))
 
-# sp.print_latex(sp.expand(-4*(-k1*k2*k3*u**4*v/(u**3 + 3*u**2 + 3*u + 1) - 2*k1*k2*k3*u**3*v/(u**3 + 3*u**2 + 3*u + 1) + k1*k2*k3*u**2*v/(u**3 + 3*u**2 + 3*u + 1) - k1*k2*v/(u**2 + 2*u + 1 )- k2*k3*u**2/(u + 1)+ k2) + (k1*v/(u**2 + 2*u + 1) + k2*k3*u**2/(u + 1)  - k2 - 1)**2))
-
-print (0.190983005625053 /1.17557050458504)**2 - 0.026393202250021
+# print (0.190983005625053 /1.17557050458504)**2 - 0.026393202250021

@@ -35,7 +35,7 @@ def draw_phase_portrait(args, num_u=1, num_v=1, start_u=0., stop_u=5., start_v=0
 
 
 k1 = 1
-k2 = -1
+k2 = -0.02
 k3 = 1
 
 
@@ -58,9 +58,9 @@ def draw_nullclines(n, start_u=0., stop_u=5., start_v=0., stop_v=5.):
 
 
 start_u = 0.0
-stop_u = 5.0
+stop_u = 4.0
 start_v = 0.1
-stop_v = 10.0
+stop_v = 3.0
 stop_t = 100
 num_u = 10
 num_v = 10

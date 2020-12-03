@@ -178,11 +178,13 @@ J(0,0) =
 
 
 Якобиан в этой точке принимает вид:\\
+
 J(u*,v*) =
 \begin{pmatrix}
-    \(1-k_1 \left( \dfrac{1}{k_1} \left( 1 + \dfrac{2k_3}{1 + \sqrt{1+4k_3}} \right) \right)\left(\dfrac{1}{(1+ \left( \dfrac{1 \pm \sqrt{1+4k_3}}{2k_3} \right) )^2}\right)\) & \(-k_1 \dfrac{\left( \dfrac{1 \pm \sqrt{1+4k_3}}{2k_3} \right)^2}{1+\left( \dfrac{1 \pm \sqrt{1+4k_3}}{2k_3} \right)}\)\\
-    \(-k_2 k_3 \left( \dfrac{1}{k_1} \left( 1 + \dfrac{2k_3}{1 + \sqrt{1+4k_3}} \right) \right) \dfrac{ \left( \dfrac{1 \pm \sqrt{1+4k_3}}{2k_3} \right) \left( 2 + \left( \dfrac{1 \pm \sqrt{1+4k_3}}{2k_3} \right) \right)}{\left( 1+\left( \dfrac{1 \pm \sqrt{1+4k_3}}{2k_3} \right) \right)^2} \) & \(k_2 \left( 1 - k_3\dfrac{\left( \dfrac{1 \pm \sqrt{1+4k_3}}{2k_3} \right)^2}{1+\left( \dfrac{1 \pm \sqrt{1+4k_3}}{2k_3} \right)} \right)\)
-\end{pmatrix}\\
+    \(- \frac{\frac{\sqrt{5}}{2} + \frac{5}{2}}{\frac{\sqrt{5}}{2} + \frac{3}{2}} + 1\) & \(- \frac{k_{1} \left(\frac{1}{2} + \frac{\sqrt{5}}{2}\right)^{2}}{\frac{\sqrt{5}}{2} + \frac{3}{2}}\) \\
+    \(- \frac{k_{2} \left(1 + \sqrt{5} + \left(\frac{1}{2} + \frac{\sqrt{5}}{2}\right)^{2}\right)}{k_{1} \left(\frac{1}{2} + \frac{\sqrt{5}}{2}\right) \left(\frac{\sqrt{5}}{2} + \frac{3}{2}\right)}\) & \(k_{2} \left(- \frac{\left(\frac{1}{2} + \frac{\sqrt{5}}{2}\right)^{2}}{\frac{\sqrt{5}}{2} + \frac{3}{2}} + 1\right)\)
+\end{pmatrix}
+\\
 
 \(
 \lambda_1 = - \frac{21 \sqrt{5} \sqrt{2728 \sqrt{5} k_{2} + 6100 k_{2} + 72 \sqrt{5} + 161}}{4} + \frac{47 \sqrt{2728 \sqrt{5} k_{2} + 6100 k_{2} + 72 \sqrt{5} + 161}}{4} - \frac{3}{4} + \frac{\sqrt{5}}{4}
@@ -220,13 +222,64 @@ J(u*,v*) =
 
 \subsection{Фазовый портрет}
 
-Данный фазовый портрет был построен при \(k_1 = 1,k_2 = -1,k_3 = 1\), точки начала траекторий расположены на сетке 10х10, с параметрами start_u = 0.0, stop_u = 5.0, start_v = 1.0, stop_v = 10.0, stop_t = 100, num_t = 10000.
-*картинки*
+\subsubsection{Случай 1}
+\includegraphics[width=1\textwidth]{figure_2.png}\\
+Данный фазовый портрет был построен при \(k_1 = 1,k_2 = -0.02,k_3 = 1\), точки начала траекторий расположены на сетке 10х10, с параметрами start_u = 0.0, stop_u = 4.0, start_v = 0.1, stop_v = 3.0, stop_t = 100, num_t = 10000.\\
+
+Видим, что неподвижная точка \( T_2 = (u^*, v^*)\) устойчива, к ней устремляются все трактории, кроме наинающихся в 0. А точка \( T_1 = (0,0)\) неучтойчива - траектории с \(u_0 = 0\) стремятся к ней, а траектории с \(v_0 = 0\) удаляются от нее.
+
+\subsubsection{Случай 2}
+\includegraphics[width=1\textwidth]{figure_1.png}\\
+Данный фазовый портрет был построен при \(k_1 = 1,k_2 = -1,k_3 = 1\), точки начала траекторий расположены на сетке 10х10, с параметрами start_u = 0.0, stop_u = 5.0, start_v = 0.1, stop_v = 10.0, stop_t = 100, num_t = 10000.\\
+
+
 
 \newpage
 \section{Исследование распределенной системы}
 \subsection{Проверка наличия волновых решений}
+Волновые решения ищем в форме:  \(u(t,x)=u(x+ct), v(t,x)=v(x+ct) \). Подставим это в уравнение системы. Получим:\\
+\[
+    \begin{cases}
+        c u^\prime(z) = u(z)\left(1 -  k_1\dfrac{u(z)v(z)}{1 + u(z)}\right) , \\
+        c v^\prime(z) = k_2 v(z)\left(1 - k_3 \dfrac{u(z)^2}{1 + u(z)}\right) + v^{\prime\prime}(z).
+    \end{cases}
+\]
 
+Введем переменную w и перепишем систему:\\
+\[
+    \begin{cases}
+        c u^\prime(z) = u(z)\left(1 -  k_1\dfrac{u(z)v(z)}{1 + u(z)}\right) , \\
+        v^\prime(z) = w(z) , \\
+        w^\prime(z) = cw(z) - k_2 v(z)\left(1 - k_3 \dfrac{u(z)^2}{1 + u(z)}\right).
+    \end{cases}
+\]
+
+У этой системы 2 неподвижных точки:
+\(\overline{O} = (0, 0, 0)\) и \(\overline{P} = (u^*,v^*,0)\), где \(u^* = \dfrac{1 + \sqrt{5}}{2}, v^* = \dfrac{1}{k_1} \left( 1 + \dfrac{2}{1 + \sqrt{5}} \right) \).\\
+
+Якобиан системы имеет вид:\\
+J(u,v,w) =
+\begin{pmatrix}
+    \(\dfrac{1}{c} (1-k_1 uv\dfrac{2+u}{(1+u)^2})\) & \(\dfrac{-k_1}{c} \dfrac{u^2}{1+u}\) & 0\\
+    0 & 0 & 1 \\
+    \(k_2 k_3 uv\dfrac{2 + u}{\left( 1+u \right)^2} \) & \(-k_2 \left( 1 - k_3\dfrac{u^2}{1+u} \right)\) & \(c\)\)
+\end{pmatrix}\\
+
+Рассмотрим Якобиан в точках \(\overline{O}\) и \(\overline{P}\).\\
+
+J(0,0,0) =
+\begin{pmatrix}
+    \(\dfrac{1}{c}\) & 0  & 0\\
+    0 & 0 & 1 \\
+    \(0 & \(-k_2 \) & \(c\)\)
+\end{pmatrix}\\
+
+J(u^*,v^*,0) =
+\begin{pmatrix}
+    \(\dfrac{1}{c} (1-k_1 uv\dfrac{2+u}{(1+u)^2})\) & \(\dfrac{-k_1}{c} \dfrac{u^2}{1+u}\) & 0\\
+    0 & 0 & 1 \\
+    \(k_2 k_3 uv\dfrac{2 + u}{\left( 1+u \right)^2} \) & \(-k_2 \left( 1 - k_3\dfrac{u^2}{1+u} \right)\) & \(c\)\)
+\end{pmatrix}\\
 
 
 
