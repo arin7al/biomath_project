@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.12.20)  3 DEC 2020 23:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.12.20)  10 DEC 2020 14:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1461,47 +1461,110 @@ Underfull \hbox (badness 10000) in paragraph at lines 337--338
 
  []
 
-[9] [10
+
+Underfull \hbox (badness 10000) in paragraph at lines 343--344
+
+ []
+
+<Figure_11.png, id=57, 1040.688pt x 624.4128pt>
+File: Figure_11.png Graphic file (type png)
+<use Figure_11.png>
+Package pdftex.def Info: Figure_11.png  used on input line 345.
+(pdftex.def)             Requested size: 512.78981pt x 307.68947pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 345--346
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
+
+ []
+
+[9]
+./report.tex:347: Undefined control sequence.
+l.347 ...им, что траектории с \(\w
+                                                  >0\) удаляются о...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 347--348
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 349--350
+
+ []
+
+<Figure_13.png, id=61, 462.528pt x 346.896pt>
+File: Figure_13.png Graphic file (type png)
+<use Figure_13.png>
+Package pdftex.def Info: Figure_13.png  used on input line 351.
+(pdftex.def)             Requested size: 512.78981pt x 384.61447pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 351--352
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--352
+
+ []
+
+[10 <./Figure_11.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 353--354
+
+ []
+
+[11 <./Figure_13.png>] [12
 
 ]
 (/Volumes/жеский диск/учеба/магистратура вмк/1 с
-еместр/биоматематика/biomath_project/task1/out/report.aux) )
- 
+еместр/биоматематика/biomath_project/task1/out/report.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3721 strings out of 492649
- 48781 string characters out of 6129621
+ 3731 strings out of 492649
+ 48949 string characters out of 6129621
  126506 words of memory out of 5000000
- 7509 multiletter control sequences out of 15000+600000
+ 7517 multiletter control sequences out of 15000+600000
  18116 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,25p,616b,224s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}<
-/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
-usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb
-></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
-usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/l
-ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
-l/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
-/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/t
-exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
-live/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texli
-ve/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive
-/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2
-018/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/201
-8/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2018/
-texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2018/te
-xmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2018/texm
-f-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2018/texmf-
-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2018/texmf-di
-st/fonts/type1/public/cm-super/sfti1440.pfb>
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc
+}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.p
+fb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pf
+b></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb>
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
+usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr
+/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/lo
+cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
+al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local
+/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/t
+exlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/tex
+live/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texli
+ve/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive
+/2018/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2
+018/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/201
+8/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2018/
+texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2018/te
+xmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2018/texm
+f-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2018/texmf-
+dist/fonts/type1/public/cm-super/sfti1440.pfb>
 Output written on "/Volumes/жеский диск/учеба/магистрат
 ура вмк/1 семестр/биоматематика/biomath_project/task1
-/out/report.pdf" (10 pages, 765078 bytes).
+/out/report.pdf" (12 pages, 1130170 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 138 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
